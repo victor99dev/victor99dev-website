@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;400;500;600;700;800;900&display=swap');
+
+*
+
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+.main-width {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.home {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url(images/background1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header {
+    padding: 10px 30px;
+    position:absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: 100;
+}
+
+.logo i {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo i:hover{
+    color: #000;
+    background: #00FF00;
+    transition: 0.2s;
+}
+
+.home_components {
+    position: absolute;
+    padding-top: 200px;
+    top: 30;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0px 0px 0px 30px;
+}
+
+.home_components .home-text {
+    margin-bottom: 40px;
+}
+
+
+.home_components .home-text h3 { /*hello*/
+    color: #fff;
+    font-weight: 400;
+    font-size: 27px;
+}
+
+.home_components .home-text h1 { /*my name*/
+    color: #00FF00;
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 20px 0px 20px;    
+}
+
+.home_components .home-text h5 { /*i'm*/
+    color: #fff;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+span {
+    color: #00FF00;
+}
+
+.home_components .home-text p {
+    margin-top: 10px;
+    color: #FFF;
+    width: 440px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-family: 'Jost';
+    font-style: italic;
+}
+
+
+.button{
+    margin-top: 50px;
+    padding: 0 80px;
+    font-size: 20px;
+    align-items: center;
+}
+
+
+.button a{
+    color: #00FF00;
+    background: transparent;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 8px 30px;    
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button a:hover{
+    color: #000;
+    background: #00FF00;
+    transition: 0.2s;
+}
+
+.social a {
+    margin-top: 50px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #00FF00;
+    margin-bottom: 35px;
+}
+
+.social a:hover {
+    background: transparent;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    transition: 0.2s;
+}
+
+footer {
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+.rodape p{
+    color: #A9A9A9;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+@media (max-width: 1024px) {
+    .home {
+        height: 90vh;
+    }
+    .home_components {
+        font-size: 40px;
+    }
+    .home-text {
+        font-size: 10px;
+    }
+
+    .home_components .home-text h3 { /*hello*/
+        font-size: 17px;
+    }
+    
+    .home_components .home-text h1 { /*my name*/
+        font-size: 35px;  
+    }
+    
+    .home_components .home-text h5 { /*i'm*/
+        font-size: 20px;
+    }
+    
+    .home_components .home-text p{
+        font-size: 15px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .button {
+        font-size: 16px;
+    }
+   
+    .social {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 820px) {
+    .home {
+        height: 90vh;
+    }
+    .home_components {
+        margin-top: 200px;
+        font-size: 40px;
+    }
+    .home-text {
+        font-size: 10px;
+    }
+
+    .home_components .home-text h3 { /*hello*/
+        font-size: 17px;
+    }
+    
+    .home_components .home-text h1 { /*my name*/
+        font-size: 35px;  
+    }
+    
+    .home_components .home-text h5 { /*i'm*/
+        font-size: 20px;
+    }
+    
+    .home_components .home-text p{
+        font-size: 15px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .button {
+        font-size: 16px;
+    }
+   
+    .social {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 912px) {
+    .home {
+        height: 90vh;
+    }
+    .home_components {
+        margin-top: 300px;
+        font-size: 40px;
+
+    }
+}
+
+@media (max-width: 760px) {
+    .home {
+        height: 90vh;
+    }
+    .home_components {
+        margin-top: 150px;
+        font-size: 40px;
+    }
+    .home-text {
+        font-size: 10px;
+    }
+
+    .home_components .home-text h3 { /*hello*/
+        font-size: 17px;
+    }
+    
+    .home_components .home-text h1 { /*my name*/
+        font-size: 35px;  
+    }
+    
+    .home_components .home-text h5 { /*i'm*/
+        font-size: 20px;
+    }
+    
+    .home_components .home-text p{
+        font-size: 15px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .button {
+        font-size: 16px;
+    }
+   
+    .social {
+        margin-top: 35px;
+        font-size: 8px;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 540px) {
+    .home_components{
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 414px) {
+    .home_components{
+        margin-top: 200px;
+    }
+}
+
+@media (max-width: 412px) {
+    .home_components{
+        margin-top: 200px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .home {
+        height: 60vh;
+    }
+    .home_components {
+        margin-top: 40px;
+        font-size: 40px;
+
+    }
+
+    .button {
+        font-size: 10px;
+    }
+   
+    .social {
+        margin-top: 10px;
+        font-size: 8px;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 360px) {
+    .home {
+        height: 60vh;
+    }
+    .home_components {
+        margin-top: 40px;
+        font-size: 10px;
+
+    }
+
+    .button {
+        font-size: 10px;
+    }
+   
+    .social {
+        margin-top: 10px;
+        font-size: 5px;
+                
+    }
+
+    .social a {
+        margin-right: 5px;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 9px;
+    }
+}

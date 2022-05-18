@@ -192,6 +192,7 @@ footer {
         height: 90vh;
     }
     .home_components {
+        margin-top: 300px;
         font-size: 40px;
     }
     .home-text {
@@ -338,7 +339,11 @@ footer {
 
 @media (max-width: 414px) {
     .home_components{
-        margin-top: 200px;
+        margin-top: 90px;
+    }
+
+    .social {
+        margin-top: 10px;
     }
 }
 
@@ -354,7 +359,7 @@ footer {
         height: 60vh;
     }
     .home_components {
-        margin-top: 40px;
+        margin-top: 30px;
         font-size: 40px;
 
     }
@@ -364,7 +369,7 @@ footer {
     }
    
     .social {
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 8px;
     }
 

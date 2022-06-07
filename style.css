@@ -12,14 +12,55 @@
 
 body {
     overflow-x: hidden;
-    background-color: #000;
+    background-color: #1C1C1C;
 }
 
 .main-width {
-    width: 1280px;
+    width: 1280x;
     max-width: 95%;
     margin: 0 auto;
     padding: 0px 20px;
+}
+.top {
+    position:fixed;
+    z-index: 999;
+    transition: ease 0.4s;
+}
+
+.top.sticky{
+    padding: 15px 30px;
+    background: #000;
+}
+
+.navlist-btn {
+    color:#00FF00;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.scrollup {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background:#00FF00;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color:#000;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+.scrollup.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .home {
@@ -32,6 +73,30 @@ body {
     background-position: center;
     position: relative;
 }
+
+.navlist {
+    list-style: none;
+}
+
+.navlist li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navlist li a {
+    display: inline-block;
+    color: #fff;
+    margin-left: 55px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navlist li a:hover {
+    color: #00FF00;
+    transition: ease 0.4s;
+
+}
+
 
 header {
     padding: 10px 30px;
@@ -69,7 +134,7 @@ header {
 }
 
 .home_components {
-    position: absolute;
+    position:absolute;
     padding-top: 200px;
     top: 30;
     left: 0;
@@ -171,6 +236,115 @@ span {
     transition: 0.2s;
 }
 
+.about {
+    margin-top: 50px;
+    padding: 10px 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .title {
+    position: relative;
+    color: #00FF00;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Jost', sans-serif;
+}
+
+.about .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 5px;
+    background: #00FF00;
+    transform: translateX(-50%);
+}
+
+.about .title::after{
+    content: "Quem eu sou";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
+    background: #1C1C1C;
+    transform: translateX(-50%);
+}
+
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .about-text {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .about-text span {
+    color: #00FF00;
+}
+
+.about .about-content .right p {
+    padding-top: 10px;
+    font-size: 18px;
+    text-align: justify;
+    color: #fff;
+}
+
+.about .about-content .right .social2 {
+    margin-top: 25px;
+    text-align: center;
+    padding: 0 80px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.about .about-content .right .social2 a{
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #00FF00;
+    margin-bottom: 35px;
+}
+.about .about-content .right .social2 a:hover{
+    background: transparent;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    transition: 0.2s;
+}
+
 footer {
     text-align: center;
     left: 0;
@@ -187,9 +361,79 @@ footer {
     font-size: 15px;
 }
 
+/*Responsividade*/
+
+@media (max-width: 1131px) {
+    .home {
+        height: 100vh;
+    }
+    
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+
+    .about .about-content .column{
+        width: 50%;     
+    }
+
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .about .about-content .right {
+        flex: 100%;
+    }
+
+    footer{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 1024px) {
     .home {
-        height: 90vh;
+        height: 100vh;
+    }
+    .home_components {
+        font-size: 40px;
+    }
+    .home-text {
+        font-size: 10px;
+    }
+
+    .home_components .home-text h3 { /*hello*/
+        font-size: 17px;
+    }
+    
+    .home_components .home-text h1 { /*my name*/
+        font-size: 35px;  
+    }
+    
+    .home_components .home-text h5 { /*i'm*/
+        font-size: 20px;
+    }
+    
+    .home_components .home-text p{
+        font-size: 15px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+
+    .button {
+        font-size: 16px;
+    }
+   
+    .social {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 947px) {
+    .home {
+        height: 100vh;
     }
     .home_components {
         margin-top: 5px;
@@ -216,6 +460,42 @@ footer {
         max-width: 100%;
         margin-right: 30px;
     }
+
+    .navlist-btn {
+       display: block;
+       z-index: 999;
+    }
+
+    .navlist-btn i.active:before{
+        content: "\f00d";
+    }
+
+    .navlist {
+        position: fixed;
+        height: 100vh;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        background-color: #111;
+        text-align: center;
+        padding-top: 250px;
+        transition: all 0.4s ease;
+    }
+
+    .navlist.active{
+        left: 0;
+    }
+    
+    .navlist li {
+        display: block;
+    }
+
+    .navlist li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
     .button {
         font-size: 16px;
     }
@@ -225,186 +505,75 @@ footer {
         font-size: 8px;
     }
 
-    footer{
-        margin-top: 10px;
-        font-size: 9px;
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
     }
-}
 
-@media (max-width: 912px) {
-    .home {
-        height: 90vh;
+    .about .about-content .column{
+        width: 50%;     
     }
-    .home_components {
-        margin-top: 300px;
-        font-size: 40px;
 
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
     }
-}
 
+    .about .about-content .right {
+        flex: 100%;
+    }
 
-@media (max-width: 820px) {
-    .home {
-        height: 90vh;
-    }
-    .home_components {
-        margin-top: 200px;
-        font-size: 40px;
-    }
-    .home-text {
+    .about .about-content .right .social2 {
         font-size: 10px;
-    }
-
-    .home_components .home-text h3 { /*hello*/
-        font-size: 17px;
-    }
-    
-    .home_components .home-text h1 { /*my name*/
-        font-size: 35px;  
-    }
-    
-    .home_components .home-text h5 { /*i'm*/
-        font-size: 20px;
-    }
-    
-    .home_components .home-text p{
-        font-size: 15px;
-        max-width: 100%;
-        margin-right: 30px;
-    }
-    .button {
-        font-size: 16px;
-    }
-   
-    .social {
-        margin-top: 5px;
-        font-size: 8px;
+        justify-content: center;  
     }
 
     footer{
         margin-top: 10px;
-        font-size: 9px;
-    }
-}
-
-@media (max-width: 760px) {
-    .home {
-        height: 90vh;
-    }
-    .home_components {
-        margin-top: 150px;
-        font-size: 40px;
-    }
-    .home-text {
         font-size: 10px;
-    }
-
-    .home_components .home-text h3 { /*hello*/
-        font-size: 17px;
-    }
-    
-    .home_components .home-text h1 { /*my name*/
-        font-size: 35px;  
-    }
-    
-    .home_components .home-text h5 { /*i'm*/
-        font-size: 20px;
-    }
-    
-    .home_components .home-text p{
-        font-size: 15px;
-        max-width: 100%;
-        margin-right: 30px;
-    }
-    .button {
-        font-size: 16px;
-    }
-   
-    .social {
-        margin-top: 35px;
-        font-size: 8px;
-    }
-
-    footer{
-        margin-top: 10px;
-        font-size: 9px;
-    }
-}
-
-@media (max-width: 540px) {
-    .home_components{
-        margin-top: 40px;
-    }
-}
-
-@media (max-width: 414px) {
-    .home_components{
-        margin-top: 90px;
-    }
-
-    .social {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 412px) {
-    .home_components{
-        margin-top: 200px;
-    }
-}
-
-
-@media (max-width: 375px) {
-    .home {
-        height: 60vh;
-    }
-    .home_components {
-        margin-top: 30px;
-        font-size: 40px;
-
-    }
-
-    .button {
-        font-size: 10px;
-    }
-   
-    .social {
-        margin-top: 5px;
-        font-size: 8px;
-    }
-
-    footer{
-        margin-top: 10px;
-        font-size: 9px;
     }
 }
 
 @media (max-width: 360px) {
     .home {
-        height: 60vh;
+        height: 100vh;
     }
-    .home_components {
-        margin-top: 40px;
-        font-size: 10px;
-
-    }
-
+    
     .button {
         font-size: 10px;
     }
    
     .social {
-        margin-top: 10px;
         font-size: 5px;
-                
     }
 
     .social a {
         margin-right: 5px;
     }
 
+
+    .about {
+        font-size: 15px;
+    }
+    
+    .about .title {
+        font-size: 40px;
+    }
+        
+    .about .title::after{
+        font-size: 19px;
+    }
+   
+    .about .about-content .right .social2 {
+        font-size: 5px; 
+        justify-content: center;
+        align-items: baseline;
+    }
+
+
     footer{
         margin-top: 10px;
-        font-size: 9px;
+        font-size: 10px;
     }
 }

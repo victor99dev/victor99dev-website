@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Hugo Dev</title>
+    <link rel="icon" href="images/icon.png">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="src=https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <section class="home">
+    <div class="scrollup">
+       <i class="fas fa-angle-up"></i> 
+    </div>
+    <section class="home" id="home">
         <div class="main-width">
-            <header>
+            <header class="top">
                 <div class="logo"><a href="#"><i class="fa-solid fa-v"></i></a>
+                </div>
+
+                <ul class="navlist">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre mim</a></li>
+                    <li><a href="https://github.com/torugo99" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank">LinkedIn </a></li>
+                </ul>
+
+                <div class="navlist-btn">
+                    <i class="fas fa-bars"></i>
                 </div>
             </header>
         </div>
@@ -58,6 +73,43 @@
             </div>
         </div>
     </section>
+    
+    <section class="about" id="about">
+        <div class="main-width">
+            <h2 class="title">Sobre mim</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="images/profile.jpg" alt="victor-hugo99">
+                </div>
+                <div class="column right"> 
+                    <div class="about-text">Eu sou, <span class="input2"></span></div>
+                    <p>Atualmente estudo Flutter e desenvolvimento Full Stack além da especialização em Engenharia
+                        de Software. Possuo carreira em análise de sistemas e de bancos de dados, web designer,
+                        SQL, design gráfico e redes de computadores. Busco ter a oportunidade de um dia ser um
+                        desenvolvedor, assim como o crescimento profissional e compartilhamento de aprendizagem,
+                        sendo um colaborador prestativo e objetivo no mercado. Possuo a facilidade de aprendizagem
+                        nas atividades propostas.
+                    </p>
+                    <p>
+                        Se caso desejar entrar em contato estou disponível via <span>LinkedIn</span> e não 
+                        se esqueça de acessar meu <span>GitHub</span>.
+                    </p>
+
+                    <div class="social2">
+                        <a href="https://github.com/torugo99" target="_blank">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank">
+                            <i class='bx bxl-linkedin' ></i>
+                        </a>   
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <footer>
         © 2022 Victor99Dev - todos os direitos reservados.
         </div>

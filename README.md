@@ -4,7 +4,7 @@
 
 - Utilizando: HTML, CSS e JavaScript.
 
-- Ao acessar meus site você vai ver links importantes.
+- Ao acessar meu site você vai ver links importantes.
 
 ## 👩‍💻 Meus Links:
 

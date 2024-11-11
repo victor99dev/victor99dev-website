@@ -23,14 +23,14 @@ $('.navlist-btn').click(function(){
 });
 
 var typed = new Typed(".input", {
-    strings:["Desenvolvedor.","Analista de Sistemas.","DBA.","Web Design.","UI/UX Design.","Design Gráfico.","Youtuber.","Streamer.","Freelancer."],
+    strings:["Desenvolvedor.","Analista de Sistemas.","DBA.","Web Design.","UI/UX Design.","Design Gráfico.","Freelancer."],
     typeSpeed: 60,
     backSpeed: 60,
     loop:true
 });
 
 var typed = new Typed(".input2", {
-    strings:["Victor Hugo.","Desenvolvedor.","Analista de Sistemas.","DBA.","Web Design.","UI/UX Design.","Design Gráfico.","Youtuber.","Streamer.","Freelancer."],
+    strings:["Victor Hugo.","Desenvolvedor.","Analista de Sistemas.","DBA.","Web Design.","UI/UX Design.","Design Gráfico.","Freelancer."],
     typeSpeed: 60,
     backSpeed: 60,
     loop:true

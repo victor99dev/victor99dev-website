@@ -11,13 +11,14 @@ const roles = [
   "Freelancer.",
 ];
 
-const aboutRoles = [
-  "Victor Hugo.",
-  "Desenvolvedor.",
-  "Engenheiro de Software.",
-  "Analista de Sistemas.",
-  "DBA.",
-  "Freelancer.",
+const aboutRoles = ["Victor Hugo.", ...roles];
+
+const navLinks = [
+  { label: "Início", href: "#home" },
+  { label: "Sobre mim", href: "#about" },
+  { label: "Contato", href: "#contact" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/victor-hugo99/", external: true },
+  { label: "GitHub", href: "https://github.com/victor99dev", external: true },
 ];
 
 const socialLinks = [
@@ -28,6 +29,20 @@ const socialLinks = [
   { label: "YouTube", href: "https://www.youtube.com/c/vitorcalltv" },
   { label: "DeviantArt", href: "https://www.deviantart.com/torugo99" },
 ];
+
+const blockedCtrlKeys = ["u", "s", "c", "x", "a", "p"];
+const blockedCtrlShiftKeys = ["i", "j", "c"];
+const localhostNames = ["localhost", "127.0.0.1"];
+
+function isBlockedShortcut(event) {
+  const key = event.key.toLowerCase();
+
+  return (
+    event.key === "F12" ||
+    (event.ctrlKey && blockedCtrlKeys.includes(key)) ||
+    (event.ctrlKey && event.shiftKey && blockedCtrlShiftKeys.includes(key))
+  );
+}
 
 function useTypewriter(words, speed = 105, pause = 1700) {
   const [wordIndex, setWordIndex] = useState(0);
@@ -82,18 +97,8 @@ export default function App() {
       const isMobile = window.innerWidth <= 720;
 
       setShowScrollTop(currentScrollY > 420);
+      setIsHeaderHidden(!isMobile && currentScrollY > 120 && currentScrollY > lastScrollY);
 
-      if (isMobile) {
-        setIsHeaderHidden(false);
-        lastScrollY = currentScrollY;
-        return;
-      }
-
-      if (currentScrollY > 120 && currentScrollY > lastScrollY) {
-        setIsHeaderHidden(true);
-      } else {
-        setIsHeaderHidden(false);
-      }
       lastScrollY = currentScrollY;
     };
 
@@ -108,9 +113,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-
-    if (isLocalHost) {
+    if (localhostNames.includes(window.location.hostname)) {
       return undefined;
     }
 
@@ -119,15 +122,7 @@ export default function App() {
     };
 
     const handleKeyDown = (event) => {
-      const key = event.key.toLowerCase();
-      const blockedCtrlKeys = ["u", "s", "c", "x", "a", "p"];
-      const blockedCtrlShiftKeys = ["i", "j", "c"];
-
-      if (
-        event.key === "F12" ||
-        (event.ctrlKey && blockedCtrlKeys.includes(key)) ||
-        (event.ctrlKey && event.shiftKey && blockedCtrlShiftKeys.includes(key))
-      ) {
+      if (isBlockedShortcut(event)) {
         event.preventDefault();
       }
     };
@@ -185,11 +180,17 @@ export default function App() {
         </button>
 
         <nav className={`nav ${isMenuOpen ? "is-open" : ""}`}>
-          <a href="#home" onClick={handleMenuClose}>Início</a>
-          <a href="#about" onClick={handleMenuClose}>Sobre mim</a>
-          <a href="#contact" onClick={handleMenuClose}>Contato</a>
-          <a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank" rel="noreferrer" onClick={handleMenuClose}>LinkedIn</a>
-          <a href="https://github.com/victor99dev" target="_blank" rel="noreferrer" onClick={handleMenuClose}>GitHub</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noreferrer" : undefined}
+              onClick={handleMenuClose}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </header>
 

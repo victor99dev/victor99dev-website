@@ -8,15 +8,16 @@ const roles = [
   "Engenheiro de Software.",
   "Analista de Sistemas.",
   "DBA.",
-  "Freelancer."
+  "Freelancer.",
 ];
+
 const aboutRoles = [
   "Victor Hugo.",
   "Desenvolvedor.",
   "Engenheiro de Software.",
   "Analista de Sistemas.",
   "DBA.",
-  "Freelancer."
+  "Freelancer.",
 ];
 
 const socialLinks = [
@@ -105,6 +106,7 @@ export default function App() {
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
+
   useEffect(() => {
     const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
@@ -243,13 +245,16 @@ export default function App() {
                 Eu sou, <span className="typewriter">{typedAboutRole}</span>
               </h3>
               <p>
-                Minha atuação combina <span className="inline-highlight">engenharia de software</span>, <span className="inline-highlight">arquitetura</span> e execução. Entro bem em cenários que exigem organização técnica, leitura de negócio e capacidade de transformar requisitos em solução sustentável.
+                Minha atuação vai além do desenvolvimento de software tradicional. Trabalho na interseção entre <span className="inline-highlight">tecnologia</span>, <span className="inline-highlight">produto</span> e <span className="inline-highlight">negócio</span>, transformando requisitos complexos em soluções escaláveis, sustentáveis e orientadas a valor.
               </p>
               <p>
-                Tenho base forte em <span className="inline-highlight">Back-End</span>, mas consigo avançar no stack quando o contexto pede integração entre produto, regra de negócio e entrega. Isso me permite contribuir tanto em equipes internas quanto em projetos e parcerias estratégicas.
+                Tenho experiência consistente na construção de sistemas modernos, com forte atuação em <span className="inline-highlight">Back-End</span>, integrações críticas e ambientes que exigem confiabilidade, clareza técnica e evolução contínua. Atuo desde a concepção até a entrega, mantendo alinhamento entre decisões técnicas, qualidade e impacto real no produto.
               </p>
               <p>
-                Se você quiser conhecer melhor meu trabalho, projetos e forma de pensar tecnologia, meu <span className="inline-highlight">LinkedIn</span> e <span className="inline-highlight">GitHub</span> concentram bem essa trajetória.
+                Mais do que desenvolver software, meu foco está em organizar cenários complexos, dar estrutura ao que ainda está difuso e viabilizar produtos digitais que sustentem crescimento real de negócio. Hoje também atuo na construção de iniciativas próprias e parcerias estratégicas, conectando execução técnica a oportunidades concretas de mercado.
+              </p>
+              <p>
+                Se quiser entender melhor minha forma de pensar, construir e evoluir sistemas, meu <span className="inline-highlight">LinkedIn</span> e <span className="inline-highlight">GitHub</span> refletem bem essa jornada.
               </p>
 
               <div className="about-links">

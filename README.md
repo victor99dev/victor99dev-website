@@ -1,13 +1,14 @@
-# 💻 | Sejam bem vindos ao meu Website.
+# Victor99Dev Website
 
-### Feito totalmente para redirecionar aos meus links e mostrar um pouco das minhas habilidades como Desenvolvedor Web.
+Meu portfólio pessoal, criado para apresentar um pouco sobre mim, minha atuação com desenvolvimento de software e meus principais links.
 
-- Utilizando: HTML, CSS e JavaScript.
+## Stack
 
-- Ao acessar meu site você vai ver links importantes.
+- React
+- Vite
+- JavaScript
+- CSS
 
-## 👩‍💻 Meus Links:
+## Acesso
 
-- Github: [Victor Hugo.](https://github.com/torugo99)
-- LinkedIn: [Victor Hugo.](https://www.linkedin.com/in/victor-hugo99/)
-- Meu Site: [Victor99dev.](http://victor99dev.site/)
+- Site: [victor99dev.website](https://victor99dev.website/)

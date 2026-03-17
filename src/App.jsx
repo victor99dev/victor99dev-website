@@ -4,7 +4,6 @@ import heroCardImage from "./assets/hero-card.jpg";
 import profileImage from "./assets/profile-hero.jpg";
 
 const roles = [
-  "Desenvolvedor Back-End.",
   "Desenvolvedor.",
   "Engenheiro de Software.",
   "Analista de Sistemas.",

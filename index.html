@@ -1,116 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Hugo Dev</title>
-    <link rel="icon" href="images/icon.png">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor Hugo | Desenvolvedor Back-End, Arquitetura e Engenharia de Software</title>
+    <meta
+      name="description"
+      content="Victor Hugo é desenvolvedor com foco em Back-End, arquitetura e engenharia de software. Atua com C#, TypeScript, APIs, integrações e soluções escaláveis para empresas, produtos e parcerias estratégicas."
+    />
+    <meta
+      name="keywords"
+      content="Victor Hugo, Victor99Dev, desenvolvedor back-end, engenheiro de software, arquitetura de software, C#, TypeScript, APIs, integrações, desenvolvedor full stack, portfólio desenvolvedor"
+    />
+    <meta name="author" content="Victor Hugo" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d1117" />
+    <link rel="canonical" href="https://victor99dev.website/" />
+    <link rel="icon" type="image/png" href="/images/icon.png" />
 
-<body>
-    <div class="scrollup">
-       <i class="fas fa-angle-up"></i> 
-    </div>
-    <section class="home" id="home">
-        <div class="main-width">
-            <header class="top">
-                <div class="logo"><a href="#"><i class="fa-solid fa-v"></i></a>
-                </div>
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Victor99Dev" />
+    <meta property="og:title" content="Victor Hugo | Desenvolvedor Back-End, Arquitetura e Engenharia de Software" />
+    <meta
+      property="og:description"
+      content="Back-End, arquitetura e engenharia de software com foco em execução, produto e soluções escaláveis para empresas e projetos."
+    />
+    <meta property="og:url" content="https://victor99dev.website/" />
+    <meta property="og:image" content="https://victor99dev.website/images/icon.png" />
 
-                <ul class="navlist">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre mim</a></li>
-                    <li><a href="https://github.com/victor99dev" target="_blank">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank">LinkedIn </a></li>
-                </ul>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Victor Hugo | Desenvolvedor Back-End, Arquitetura e Engenharia de Software" />
+    <meta
+      name="twitter:description"
+      content="Desenvolvedor com foco em Back-End, arquitetura e engenharia de software. Aberto a oportunidades, projetos e parcerias."
+    />
+    <meta name="twitter:image" content="https://victor99dev.website/images/icon.png" />
 
-                <div class="navlist-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </header>
-        </div>
-                
-        <div class="home_components">
-            <div class="home-text">
-                <h3>Olá, eu me chamo</h3>
-                <h1>Victor Hugo</h1>
-                <h5>Eu sou, <span class="input"></span></h5>
-                <p>Formando em Análise e desenvolvimento de sistemas e Pós-graduado em Engenharia de Software.<br/>
-                    Fique à vontade para acessar minhas redes sociais!</p>
-            </div>
-            
-            <div class="button">
-                <a href="https://drive.google.com/file/d/137UZEUvOC-EaqEj1DZC4tAXhlPQsnGbB/view" target="_blank"><i class='bx bxs-arrow-to-bottom' ></i> | Curriculo</a>
-            </div>    
-            
-            <div class="social">
-                <a href="https://github.com/victor99dev" target="_blank">
-                    <i class='bx bxl-github'></i>
-                </a>
-                <a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank">
-                    <i class='bx bxl-linkedin' ></i> 
-                </a>   
-                <a href="https://www.instagram.com/victor.hug99/" target="_blank">
-                    <i class='bx bxl-instagram' ></i>
-                </a>
-                <a href="https://www.twitch.tv/vitorcalltv" target="_blank">
-                    <i class='bx bxl-twitch' ></i>
-                </a>
-                <a href="https://www.youtube.com/c/vitorcalltv" target="_blank">
-                    <i class='bx bxl-youtube' ></i>
-                </a>
-                <a href="https://www.deviantart.com/torugo99" target="_blank">
-                    <i class='bx bxl-deviantart'></i>
-                </a>
-                <!--a href="https://www.tiktok.com/@vitorcalltv" target="_blank">
-                    <i class='bx bxl-tiktok' ></i>
-                </a-->
-            </div>
-        </div>
-    </section>
-    
-    <section class="about" id="about">
-        <div class="main-width">
-            <h2 class="title">Sobre mim</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="images/profile.jpg" alt="victor-hugo99">
-                </div>
-                <div class="column right"> 
-                    <div class="about-text">Eu sou, <span class="input2"></span></div>
-                    <p>Atualmente sou desenvolvedor Back-End, formado em ADS e Pós-Graduado em Engenharia
-                       de Software. Trabalho com as seguintes linguagens C# e Typescript, possuo carreira em 
-                       análise de sistemas e de bancos de dados, web designer, SQL, design gráfico e redes de computadores.
-                    </p>
-                    <p>
-                        Se caso desejar entrar em contato estou disponível via <span>LinkedIn</span> e não 
-                        se esqueça de acessar meu <span>GitHub</span>.
-                    </p>
-
-                    <div class="social2">
-                        <a href="https://github.com/victor99dev" target="_blank">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/victor-hugo99/" target="_blank">
-                            <i class='bx bxl-linkedin' ></i>
-                        </a>   
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <footer>
-        © 2025 Victor99Dev - todos os direitos reservados.
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Victor Hugo",
+        "url": "https://victor99dev.website/",
+        "image": "https://victor99dev.website/images/icon.png",
+        "jobTitle": "Desenvolvedor Back-End e Engenheiro de Software",
+        "description": "Desenvolvedor com foco em Back-End, arquitetura e engenharia de software, atuando com C#, TypeScript, APIs, integrações e soluções escaláveis.",
+        "sameAs": [
+          "https://www.linkedin.com/in/victor-hugo99/",
+          "https://github.com/victor99dev",
+          "https://www.instagram.com/victor.hug99/",
+          "https://www.youtube.com/c/vitorcalltv"
+        ],
+        "knowsAbout": [
+          "Back-End",
+          "Arquitetura de Software",
+          "Engenharia de Software",
+          "C#",
+          "TypeScript",
+          "APIs",
+          "Integrações",
+          "Desenvolvimento Full Stack"
+        ],
+        "alumniOf": [
+          "Análise e Desenvolvimento de Sistemas",
+          "Engenharia de Software"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

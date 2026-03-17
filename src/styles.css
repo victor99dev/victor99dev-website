@@ -231,12 +231,27 @@ img {
   line-height: 0.95;
 }
 
+
+
 .hero-copy h2,
 .about-copy h3,
 .contact-card h2 {
   margin: 18px 0 0;
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 500;
+}
+
+.hero-subtitle {
+  margin: 18px 0 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-role {
+  margin-top: 10px;
 }
 
 .hero-copy span,
@@ -249,19 +264,57 @@ img {
   font-weight: 600;
 }
 
-.typewriter {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  min-width: 13ch;
+.role-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35em;
 }
 
-.typewriter::after {
+.role-line-label {
+  flex: 0 0 auto;
+  color: var(--text) !important;
+}
+
+.typewriter {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  min-height: 1.15em;
+  vertical-align: baseline;
+  color: var(--accent);
+}
+
+.typewriter-sizer {
+  display: block;
+  visibility: hidden;
+  white-space: nowrap;
+  padding-right: 6px;
+}
+
+.typewriter-live {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+  padding-right: 6px;
+}
+
+.typewriter-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.typewriter-live::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
   width: 2px;
   height: 1.05em;
-  margin-left: 4px;
   background: currentColor;
+  transform: translateY(-50%);
   animation: blink-caret 0.8s step-end infinite;
 }
 

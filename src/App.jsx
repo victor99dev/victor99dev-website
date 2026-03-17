@@ -50,31 +50,28 @@ function useTypewriter(words, speed = 105, pause = 1700) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentWord = words[wordIndex];
+    const currentWord = words[wordIndex] ?? "";
     const holdTime = currentWord.length <= 4 ? pause + 1000 : pause;
 
-    const timeout = window.setTimeout(
-      () => {
-        if (!isDeleting) {
-          const nextText = currentWord.slice(0, displayText.length + 1);
-          setDisplayText(nextText);
-
-          if (nextText === currentWord) {
-            setIsDeleting(true);
-          }
-          return;
-        }
-
-        const nextText = currentWord.slice(0, Math.max(displayText.length - 1, 0));
+    const timeout = window.setTimeout(() => {
+      if (!isDeleting) {
+        const nextText = currentWord.slice(0, displayText.length + 1);
         setDisplayText(nextText);
 
-        if (nextText.length === 0) {
-          setIsDeleting(false);
-          setWordIndex((current) => (current + 1) % words.length);
+        if (nextText === currentWord) {
+          setIsDeleting(true);
         }
-      },
-      isDeleting ? Math.max(speed / 2, 50) : displayText === currentWord ? holdTime : speed,
-    );
+        return;
+      }
+
+      const nextText = currentWord.slice(0, Math.max(displayText.length - 1, 0));
+      setDisplayText(nextText);
+
+      if (nextText.length === 0) {
+        setIsDeleting(false);
+        setWordIndex((current) => (current + 1) % words.length);
+      }
+    }, isDeleting ? Math.max(speed / 2, 50) : displayText === currentWord ? holdTime : speed);
 
     return () => window.clearTimeout(timeout);
   }, [displayText, isDeleting, pause, speed, wordIndex, words]);
@@ -82,24 +79,73 @@ function useTypewriter(words, speed = 105, pause = 1700) {
   return displayText;
 }
 
+function TypewriterText({ words, as: Tag = "span", className = "typewriter" }) {
+  const typedText = useTypewriter(words);
+  const widestWord = words.reduce((widest, word) => (word.length > widest.length ? word : widest), words[0] ?? "");
+
+  return (
+    <Tag className={className} aria-live="polite">
+      <span className="typewriter-sizer" aria-hidden="true">
+        {widestWord}
+      </span>
+      <span className="typewriter-live">
+        <span className="typewriter-text">{typedText}</span>
+      </span>
+    </Tag>
+  );
+}
+
+function RoleLine({ label, words, as: Tag = "span", className }) {
+  return (
+    <Tag className={className}>
+      <span className="role-line-label">{label}</span>
+      <TypewriterText words={words} />
+    </Tag>
+  );
+}
+
 export default function App() {
-  const typedRole = useTypewriter(roles);
-  const typedAboutRole = useTypewriter(aboutRoles);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
-    const handleScroll = () => {
+    const updateHeaderState = () => {
       const currentScrollY = window.scrollY;
       const isMobile = window.innerWidth <= 720;
+      const scrollDelta = currentScrollY - lastScrollY;
 
       setShowScrollTop(currentScrollY > 420);
-      setIsHeaderHidden(!isMobile && currentScrollY > 120 && currentScrollY > lastScrollY);
+      setIsHeaderHidden((currentHidden) => {
+        if (isMobile || isMenuOpen || currentScrollY <= 120) {
+          return false;
+        }
+
+        if (scrollDelta >= 12) {
+          return true;
+        }
+
+        if (scrollDelta <= -12) {
+          return false;
+        }
+
+        return currentHidden;
+      });
 
       lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(updateHeaderState);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -110,7 +156,13 @@ export default function App() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsHeaderHidden(false);
+    }
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (localhostNames.includes(window.location.hostname)) {
@@ -199,9 +251,8 @@ export default function App() {
           <div className="hero-copy">
             <p className="eyebrow">Olá, eu sou</p>
             <h1>Victor Hugo</h1>
-            <h2>
-              Eu sou, <span className="typewriter">{typedRole}</span>
-            </h2>
+            <p className="hero-subtitle">Especialidades</p>
+            <TypewriterText as="h2" className="hero-role typewriter" words={roles} />
             <p>
               Atuo na concepção, evolução e sustentação de <span className="inline-highlight">sistemas</span>, <span className="inline-highlight">back-ends escaláveis</span>, <span className="inline-highlight">APIs</span> e integrações para produtos que exigem estabilidade, clareza técnica e capacidade real de crescimento.
               <br />
@@ -242,9 +293,7 @@ export default function App() {
             </div>
 
             <div className="about-copy">
-              <h3>
-                Eu sou, <span className="typewriter">{typedAboutRole}</span>
-              </h3>
+              <RoleLine as="h3" className="role-line" label="Eu sou," words={aboutRoles} />
               <p>
                 Minha atuação vai além do desenvolvimento de software tradicional. Trabalho na interseção entre <span className="inline-highlight">tecnologia</span>, <span className="inline-highlight">produto</span> e <span className="inline-highlight">negócio</span>, transformando requisitos complexos em soluções escaláveis, sustentáveis e orientadas a valor.
               </p>

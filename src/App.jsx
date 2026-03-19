@@ -342,7 +342,7 @@ export default function App() {
           </a>
         </div>
         <div className="footer-bottom">
-          <small className="footer-legal">© 2022 - {new Date().getFullYear()} Victor99Dev - Todos os direitos reservados.</small>
+          <small className="footer-legal">© {new Date().getFullYear()} Victor99Dev - Todos os direitos reservados.</small>
         </div>
       </footer>
 
